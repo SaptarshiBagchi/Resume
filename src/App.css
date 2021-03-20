@@ -1,6 +1,6 @@
 
 .App{
-  padding: 10px;
+  padding: 20px 10px;
   background-color: black;
   color: white;
   height: 100vh;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-input{
+.inputContainer input{
   
   border: none;
   text-decoration: none;
@@ -21,4 +21,5 @@ input{
   outline: none;
   caret-color: white;
   font-size: 1em;
+  
 }

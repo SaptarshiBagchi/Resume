@@ -1,0 +1,19 @@
+.profileHolder{
+
+   
+    display: flex;
+   
+    align-items: center;
+    color: yellow;
+    padding-top: 10px;
+    
+}
+.profileType{
+    margin:  0;
+}
+
+.profileHolder a{
+    margin-left: 20px;
+    text-decoration: underline;
+    color:aqua;
+}
