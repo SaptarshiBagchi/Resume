@@ -14,7 +14,7 @@ function App() {
         <div className="commandDisplay">
           <p>
             localhost\Saptarshi\Terminal{">"}
-            Input not recognised
+            Resume should be displayed
           </p>
         </div>
       );
@@ -23,7 +23,16 @@ function App() {
         <div className="commandDisplay">
           <p>
             localhost\Saptarshi\Terminal{">"}
-            Resumes list should be displayed
+            Help should be displayed
+          </p>
+        </div>
+      );
+    } else {
+      component = (
+        <div className="commandDisplay">
+          <p>
+            localhost\Saptarshi\Terminal{">"}
+            Input not recognised
           </p>
         </div>
       );
