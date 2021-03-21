@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useRef } from "react";
 import Profile from "./Components/Profile/Profile";
 import NoCommand from "./Components/NoCommand/NoCommand";
+import Help from "./Components/Help/Help";
 
 function App() {
   const [input, setInput] = useState("");
@@ -30,19 +31,24 @@ function App() {
       component = (
         <div className="commandDisplay">
           <p>
-            {prependText} {input}
-            Help should be displayed
+            {prependText}
+            {input}
+            <Help />
           </p>
         </div>
       );
-    } else if (input.toUpperCase() == "CLEAR" || input.toUpperCase() == "CLR") {
+    } else if (
+      input.toUpperCase() == "CLEAR" ||
+      input.toUpperCase() == "CLRSCR"
+    ) {
       setDivs([]);
       return;
     } else {
       component = (
         <div className="commandDisplay">
           <p>
-            {prependText} {input}
+            {prependText}
+            {input}
             <NoCommand commandName={input} />
           </p>
         </div>

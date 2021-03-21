@@ -1,0 +1,19 @@
+import "./Help.css";
+
+export default function Help() {
+  return (
+    <div>
+      <p>All of the accessible commands</p>
+      <div className="helpHolder">
+        <p className="helpCommandName">Profile:</p>
+        <p className="helpCommandDesc">
+          Get a list of links to access my profile
+        </p>
+      </div>
+      <div className="helpHolder">
+        <p className="helpCommandName">Clear OR Clrscr:</p>
+        <p className="helpCommandDesc">Clear Screen</p>
+      </div>
+    </div>
+  );
+}

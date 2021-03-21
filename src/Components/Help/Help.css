@@ -1,0 +1,16 @@
+.helpHolder{
+    display: flex;
+    align-items: center;
+}
+.helpCommandName{
+    color : yellow;
+}
+
+.helpCommandDesc{
+    color: beige;
+    margin-left: 10px;
+}
+
+.helpHolder p{
+    margin-top: 0;
+}
