@@ -58,7 +58,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" onClick={focusTextInput}>
       <p>Saptarshi Bagchi Resume [Version 1.0.0]</p>
       <p>(c) 2021 Saptarshi Bagchi. All rights reserved.</p>
       <p>Type help to see a list of possible commands</p>
@@ -74,6 +74,7 @@ function App() {
           type="text"
           value={input}
           ref={textInput}
+          autoFocus
           className="commandstyle"
           onChange={event => {
             //  console.log("on change is evoking");
