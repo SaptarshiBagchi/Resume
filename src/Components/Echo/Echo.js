@@ -13,7 +13,7 @@ export default function Echo({ resultantArray }) {
         resultantString
       ) : (
         <p className="usage">
-          'echo' needs another argument : Usage : echo [argument]
+          'echo' needs another argument<br></br>Usage : echo [argument]
         </p>
       )}
     </div>

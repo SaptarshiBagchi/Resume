@@ -4,25 +4,27 @@ import Profile from "./Components/Profile/Profile";
 import NoCommand from "./Components/NoCommand/NoCommand";
 import Help from "./Components/Help/Help";
 import Echo from "./Components/Echo/Echo";
+import Education from "./Components/Education/Education";
+import CommandsList from "./Components/CommandsList";
 
 function App() {
   const [input, setInput] = useState("");
   const textInput = useRef();
   const [divs, setDivs] = useState([]);
+  const prependText = "localhost:\\Saptarshi>";
 
-  const prependText = "localhost:\\Saptarshi\\Terminal>";
-
+  //focussing the text
   function focusTextInput() {
     textInput.current.focus();
   }
 
   function renderCommand() {
     var component = "";
-    if (input.includes(" ") || input.toUpperCase() == "ECHO") {
-      //console.log(input);
+
+    //this is for the commands list
+    if (input.includes(" ") || CommandsList.includes(input.toUpperCase())) {
       var newString = input + " ";
       var resultantArray = newString.split(" ");
-      // console.log(resultantArray);
       if (resultantArray.length > 0) {
         if (resultantArray[0].toUpperCase() === "ECHO") {
           component = (
@@ -46,7 +48,9 @@ function App() {
           );
         }
       }
-    } else if (input.toUpperCase() === "PROFILE") {
+    }
+    //this is for the rest of the commands
+    else if (input.toUpperCase() === "PROFILE") {
       component = (
         <div className="commandDisplay">
           <p>
@@ -72,6 +76,16 @@ function App() {
     ) {
       setDivs([]);
       return;
+    } else if (input.toUpperCase() === "EDUCATION") {
+      component = (
+        <div className="commandDisplay">
+          <p>
+            {prependText}
+            {input}
+            <Education />
+          </p>
+        </div>
+      );
     } else {
       component = (
         <div className="commandDisplay">

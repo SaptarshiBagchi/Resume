@@ -1,0 +1,18 @@
+.educationHolder{
+    
+    display: flex;
+    align-items: center;
+}
+
+.degreeName{
+    color: yellow;
+}
+.institutionName{
+    margin-left: 10px;
+    color: chartreuse;
+}
+
+.educationHolder p{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
