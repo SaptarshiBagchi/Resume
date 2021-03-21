@@ -61,6 +61,7 @@ function App() {
     <div className="App">
       <p>Saptarshi Bagchi Resume [Version 1.0.0]</p>
       <p>(c) 2021 Saptarshi Bagchi. All rights reserved.</p>
+      <p>Type help to see a list of possible commands</p>
       <div>
         {divs.length > 0 &&
           divs.map(child => {
