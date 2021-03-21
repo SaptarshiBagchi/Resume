@@ -6,11 +6,13 @@ import Help from "./Components/Help/Help";
 import Echo from "./Components/Echo/Echo";
 import Education from "./Components/Education/Education";
 import CommandsList from "./Components/CommandsList";
+import ScrollToBottom from "react-scroll-to-bottom";
 
 function App() {
   const [input, setInput] = useState("");
   const textInput = useRef();
   const [divs, setDivs] = useState([]);
+
   const prependText = "localhost:\\Saptarshi>";
 
   //focussing the text
@@ -97,42 +99,46 @@ function App() {
         </div>
       );
     }
+
     setDivs([...divs, component]);
   }
 
   return (
-    <div className="App" onClick={focusTextInput}>
-      <p>Saptarshi Bagchi Resume [Version 1.0.0]</p>
-      <p>(c) 2021 Saptarshi Bagchi. All rights reserved.</p>
-      <p>Type help to see a list of possible commands</p>
-      <div>
-        {divs.length > 0 &&
-          divs.map((child, index) => {
-            return child;
-          })}
+    <ScrollToBottom>
+      <div className="App" onClick={focusTextInput}>
+        <p>Saptarshi Bagchi Resume [Version 1.0.0]</p>
+        <p>(c) 2021 Saptarshi Bagchi. All rights reserved.</p>
+        <p>Type help to see a list of possible commands</p>
+        <div>
+          {divs.length > 0 &&
+            divs.map((child, index) => {
+              return child;
+            })}
+        </div>
+        <div className="inputContainer">
+          <p> {prependText}</p>
+          <input
+            type="text"
+            value={input}
+            ref={textInput}
+            autoFocus
+            className="commandstyle"
+            onChange={event => {
+              //  console.log("on change is evoking");
+              setInput(event.target.value);
+            }}
+            onKeyDown={event => {
+              if (event.key === "Enter") {
+                renderCommand();
+
+                focusTextInput();
+                setInput("");
+              }
+            }}
+          ></input>
+        </div>
       </div>
-      <div className="inputContainer">
-        <p> {prependText}</p>
-        <input
-          type="text"
-          value={input}
-          ref={textInput}
-          autoFocus
-          className="commandstyle"
-          onChange={event => {
-            //  console.log("on change is evoking");
-            setInput(event.target.value);
-          }}
-          onKeyDown={event => {
-            if (event.key === "Enter") {
-              renderCommand();
-              setInput("");
-              focusTextInput();
-            }
-          }}
-        ></input>
-      </div>
-    </div>
+    </ScrollToBottom>
   );
 }
 
