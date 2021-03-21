@@ -14,6 +14,10 @@ export default function Help() {
         <p className="helpCommandName">Clear OR Clrscr:</p>
         <p className="helpCommandDesc">Clear Screen</p>
       </div>
+      <div className="helpHolder">
+        <p className="helpCommandName">Echo [string]:</p>
+        <p className="helpCommandDesc">Prints the string in a new line</p>
+      </div>
     </div>
   );
 }

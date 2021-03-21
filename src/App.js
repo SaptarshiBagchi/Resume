@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import Profile from "./Components/Profile/Profile";
 import NoCommand from "./Components/NoCommand/NoCommand";
 import Help from "./Components/Help/Help";
+import Echo from "./Components/Echo/Echo";
 
 function App() {
   const [input, setInput] = useState("");
@@ -17,7 +18,35 @@ function App() {
 
   function renderCommand() {
     var component = "";
-    if (input.toUpperCase() == "PROFILE") {
+    if (input.includes(" ") || input.toUpperCase() == "ECHO") {
+      //console.log(input);
+      var newString = input + " ";
+      var resultantArray = newString.split(" ");
+      // console.log(resultantArray);
+      if (resultantArray.length > 0) {
+        if (resultantArray[0].toUpperCase() === "ECHO") {
+          component = (
+            <div className="commandDisplay">
+              <p>
+                {prependText}
+                {input}
+                <Echo resultantArray={resultantArray} />
+              </p>
+            </div>
+          );
+        } else {
+          component = (
+            <div className="commandDisplay">
+              <p>
+                {prependText}
+                {input}
+                <NoCommand commandName={resultantArray[0]} />
+              </p>
+            </div>
+          );
+        }
+      }
+    } else if (input.toUpperCase() === "PROFILE") {
       component = (
         <div className="commandDisplay">
           <p>
@@ -27,7 +56,7 @@ function App() {
           </p>
         </div>
       );
-    } else if (input.toUpperCase() == "HELP") {
+    } else if (input.toUpperCase() === "HELP") {
       component = (
         <div className="commandDisplay">
           <p>
@@ -38,8 +67,8 @@ function App() {
         </div>
       );
     } else if (
-      input.toUpperCase() == "CLEAR" ||
-      input.toUpperCase() == "CLRSCR"
+      input.toUpperCase() === "CLEAR" ||
+      input.toUpperCase() === "CLRSCR"
     ) {
       setDivs([]);
       return;
@@ -64,7 +93,7 @@ function App() {
       <p>Type help to see a list of possible commands</p>
       <div>
         {divs.length > 0 &&
-          divs.map(child => {
+          divs.map((child, index) => {
             return child;
           })}
       </div>
