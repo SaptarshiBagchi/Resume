@@ -15,6 +15,12 @@ export default function Help() {
         <p className="helpCommandDesc">Get my educational History</p>
       </div>
       <div className="helpHolder">
+        <p className="helpCommandName">Projects:</p>
+        <p className="helpCommandDesc">
+          Shows a list of projects I have worked on
+        </p>
+      </div>
+      <div className="helpHolder">
         <p className="helpCommandName">Clear or Clrscr:</p>
         <p className="helpCommandDesc">Clear Screen</p>
       </div>

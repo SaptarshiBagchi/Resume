@@ -7,6 +7,7 @@ import Echo from "./Components/Echo/Echo";
 import Education from "./Components/Education/Education";
 import CommandsList from "./Components/CommandsList";
 import ScrollToBottom from "react-scroll-to-bottom";
+import Projects from "./Components/Projects/Projects";
 
 function App() {
   const [input, setInput] = useState("");
@@ -88,6 +89,16 @@ function App() {
           </p>
         </div>
       );
+    } else if (input.toUpperCase() === "PROJECTS") {
+      component = (
+        <div className="commandDisplay">
+          <p>
+            {prependText}
+            {input}
+            <Projects />
+          </p>
+        </div>
+      );
     } else {
       component = (
         <div className="commandDisplay">
@@ -123,11 +134,11 @@ function App() {
             ref={textInput}
             autoFocus
             className="commandstyle"
-            onChange={event => {
+            onChange={(event) => {
               //  console.log("on change is evoking");
               setInput(event.target.value);
             }}
-            onKeyDown={event => {
+            onKeyDown={(event) => {
               if (event.key === "Enter") {
                 renderCommand();
 

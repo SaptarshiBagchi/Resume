@@ -1,0 +1,34 @@
+.projectHolder{
+    margin-top: 5px;
+    display: flex;
+    
+}
+
+.projectName{
+    color: yellow;
+    width: 150px;
+}
+.projectDescription{
+    margin-left: 10px;
+    max-width: 60vh;
+    color: chartreuse;
+}
+
+.projectHolder p{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.features{
+    color: coral;
+}
+
+a {
+    text-decoration: underline;
+    color: yellow;
+}
+
+.techStack{
+
+    color: blanchedalmond;
+
+}
