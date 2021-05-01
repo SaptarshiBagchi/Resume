@@ -1,7 +1,7 @@
 const data = [
   {
     name: "CashNGifts",
-    link: "",
+    link: "https://play.google.com/store/apps/details?id=com.cashngifts",
     description:
       "An App for the popular platform CashNGifts which has over 1M+ downloads.",
     features: [
@@ -23,6 +23,17 @@ const data = [
       "Created a support system to create and manage tickets",
     ],
     techstack: ["MySQL", "Laravel", "Blade", "jQuery"],
+  },
+  {
+    name: "TacTyq",
+    link: "https://play.google.com/store/apps/details?id=com.crowdwise.tactyq",
+    description:
+      "A idea evaluation and business consultancy app which evaluates a business idea based on a series of questions to identify th funding probability and giving suggestions by identifying the weak aspects of the business",
+    features: [
+      "A questionnaire based system which generates a score based on the answers chosen",
+      "Strengths and weaknesses are showcased inside the business",
+    ],
+    techstack: ["Flutter", "Firebase", "NoSQL"],
   },
   {
     name: "Realtime P2P Chat Application",
