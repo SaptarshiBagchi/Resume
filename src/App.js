@@ -13,7 +13,7 @@ import RenderComponent from "./Components/RenderComponent";
 function App() {
   const [input, setInput] = useState("");
   const textInput = useRef();
-  const lastRef = useRef();
+
   const [divs, setDivs] = useState([]);
 
   const prependText = "localhost:\\Saptarshi>";
@@ -68,9 +68,6 @@ function App() {
     }
 
     setDivs([...divs, component]);
-    if (lastRef.current !== undefined) {
-      lastRef.current.scrollIntoView();
-    }
   }
 
   return (
@@ -84,7 +81,7 @@ function App() {
             if (index == divs.length - 1) {
               return (
                 <RenderComponent
-                  reference={lastRef}
+                  scroll={true}
                   prependText={child.prependText}
                   input={child.input}
                   component={child.component}
@@ -93,7 +90,7 @@ function App() {
             } else
               return (
                 <RenderComponent
-                  reference={null}
+                  scroll={false}
                   prependText={child.prependText}
                   input={child.input}
                   component={child.component}
