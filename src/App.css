@@ -2,7 +2,7 @@
 .App{
   padding: 20px 80px  10px 10px;  
   color: white;
-  
+  overflow: auto;
   height: 100vh;
 }
 
