@@ -72,7 +72,7 @@ function App() {
 
   return (
     <div className="App" onClick={focusTextInput}>
-      <p>Saptarshi Bagchi Resume [Version 1.0.0]</p>
+      <p>Saptarshi Bagchi's Resume [Version 1.0.0]</p>
       <p>(c) 2021 Saptarshi Bagchi. All rights reserved.</p>
       <p>Type help to see a list of possible commands</p>
       <div>
